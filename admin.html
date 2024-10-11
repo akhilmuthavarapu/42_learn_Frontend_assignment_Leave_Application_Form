@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin View</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+            padding-bottom: 30%;
+            padding-left: 35%;
+        }
+        #applicant-details{
+            margin-left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Leave Application Details</h1>
+        <div id="applicant-details"></div>
+    </div>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const date = urlParams.get('date');
+        const name = urlParams.get('name');
+        const authority = urlParams.get('authority');
+        const reason = urlParams.get('reason');
+        const startDate = urlParams.get('start_date');
+        const endDate = urlParams.get('end_date');
+
+
+        document.getElementById('applicant-details').innerHTML = `
+            <p><strong>Date:</strong> ${date}</p>
+            <p><strong>Applicant Name:</strong> ${name}</p>
+            <p><strong>Authority:</strong> ${authority}</p>
+            <p><strong>Reason for Leave:</strong> ${reason}</p>
+            <p><strong>Leave Start Date:</strong> ${startDate}</p>
+            <p><strong>Leave End Date:</strong> ${endDate}</p>
+        `;
+    </script>
+</body>
+</html>

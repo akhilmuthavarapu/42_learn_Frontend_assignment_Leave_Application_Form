@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    background:linear-gradient(45deg,yellowgreen,aqua,rgb(158, 21, 232),aqua);
+
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}

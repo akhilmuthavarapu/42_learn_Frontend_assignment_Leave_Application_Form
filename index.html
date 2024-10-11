@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application Form</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10%;
+        }
+        label {
+            font-weight: bold;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        form:hover
+        {
+            border: 5px solid gold;
+            box-shadow: 10px 10px 5px blueviolet ;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: whitesmoke; text-align: center;">Leave Application Form</h1>
+        <form action="admin.html" method="GET">
+           
+            <label for="date" style="display: block;">Date (Auto-filled):</label>
+            <input type="text" id="date" name="date" readonly>
+            <br><br>
+ 
+            <label for="name">Applicant Name:</label>
+            <input type="text" id="name" name="name" placeholder="e.g., Sivaram" required>
+            <br><br>
+
+            <label for="authority">Authority:</label>
+            <select id="authority" name="authority">
+                <option value="principal">Principal</option>
+                <option value="hod">HOD</option>
+            </select>
+            <br><br>
+
+            <label for="reason">Leave Applying For:</label>
+            <textarea id="reason" name="reason" placeholder="Reason for leave..." required></textarea>
+            <br><br>
+
+            <label for="start-date">Leave Start Date:</label>
+            <input type="date" id="start-date" name="start_date" required>
+            <br><br>
+
+            <label for="end-date">Leave End Date:</label>
+            <input type="date" id="end-date" name="end_date" required>
+            <br><br>
+
+            <button type="submit" style="background-color: black; color: white; padding: 10px 20px; width: 300px;">Apply</button>
+        </form>
+    </div>
+    
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').value = today;
+        const urlParams = new URLSearchParams(window.location.search);
+    </script>
+</body>
+</html>
